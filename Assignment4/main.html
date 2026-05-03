@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Earth-Moon System</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene background="color: black">
+
+    <!-- Camera -->
+<a-entity camera look-controls wasd-controls="acceleration:100" position="5 3 5"></a-entity>
+    <!-- Stars background -->
+    <a-sky color="#000011"></a-sky>
+
+    <!-- ==================== SUN ==================== -->
+    <!-- Sun positioned to the right, acts as light source -->
+    <a-entity position="8 4 -5">
+
+      <!-- Sun glow sphere -->
+    <a-sphere radius="1.5"
+    src="./sun.jpg"
+    material="emissiveMap: url(./sun.jpg); emissiveIntensity: 1; shader: flat">
+    </a-sphere>
+
+      <!-- Point light coming FROM the sun -->
+      <a-light type="point"
+        color="#fce985"
+        intensity="4"
+        distance="50"
+        decay="1">
+      </a-light>
+
+    </a-entity>
+
+    <!-- Soft ambient so dark side isn't pure black -->
+    <a-light type="ambient" color="#111111" intensity="0.5"></a-light>
+
+    <!-- ==================== EARTH ==================== -->
+    <a-entity id="earth-tilt" position="0 2 -5" rotation="0 0 23">
+      <a-entity animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 5000">
+        <a-sphere id="earth" radius="1.25"
+          src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/textures/planets/earth_atmos_2048.jpg">
+        </a-sphere>
+      </a-entity>
+    </a-entity>
+
+
+
+    <!-- ==================== MOON ==================== -->
+    <a-entity id="moon-orbit" position="0 2 -5" 
+      animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 50000">
+
+      <a-entity position="3 0 0">
+        <a-entity animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; dur: 8000">
+          <a-sphere id="moon" radius="0.35"
+            src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/textures/planets/moon_1024.jpg"
+            >
+          </a-sphere>
+        </a-entity>
+      </a-entity>
+
+    </a-entity>
+
+  </a-scene>
+</body>
+</html>
