@@ -1,0 +1,8 @@
+Model Information:
+* title:	Lamp 19
+* source:	https://sketchfab.com/3d-models/lamp-19-fe07edcfe7504d85924d8a7ae5de85c8
+* author:	Prince Obrymec (https://sketchfab.com/prince-obrymec)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
