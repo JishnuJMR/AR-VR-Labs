@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Flashcard Room</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #000; font-family: sans-serif; }
+        #crosshair {
+            position: absolute; top: 50%; left: 50%; width: 8px; height: 8px;
+            background-color: white; border-radius: 50%; transform: translate(-50%, -50%);
+            pointer-events: none; border: 1px solid black; z-index: 10;
+        }
+        #instructions {
+            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+            color: white; background: rgba(0, 0, 0, 0.6); padding: 15px;
+            border-radius: 8px; text-align: center; pointer-events: none;
+        }
+    </style>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/examples/jsm/controls/PointerLockControls": "https://unpkg.com/three@0.160.0/examples/jsm/controls/PointerLockControls.js",
+                "gsap": "https://cdn.skypack.dev/gsap",
+                "three/examples/jsm/loaders/GLTFLoader": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="crosshair"></div>
+    <div id="instructions">
+        <strong>CLICK TO START</strong><br>
+        WASD = Move | Mouse = Look | Left Click = Flip Card
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
