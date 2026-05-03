@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jishnu MR - Rotating Globe</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+
+    <a-scene background="color: #111">
+        
+        <a-plane 
+            position="0 0 -5" 
+            rotation="-90 0 0" 
+            width="10" 
+            height="10" 
+            src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/textures/planets/earth_atmos_2048.jpg"></a-plane>
+
+
+        <a-entity position="0 2 -5">
+            
+            <a-cylinder color="#C0C0C0" height="0.1" radius="0.8" position="0 0.2 -0.3"></a-cylinder>
+            
+            <a-cylinder color="#C0C0C0" height="3" radius="0.05" position="-0.5 1.7 0" rotation="0 0 20"></a-cylinder>
+
+            <a-entity rotation="0 0 23.5">
+                <a-sphere 
+                    position="0 1.9 0" 
+                    radius="1.2"
+                    src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/textures/planets/earth_atmos_2048.jpg"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear">
+                </a-sphere>
+            </a-entity>
+
+
+        </a-entity>
+
+        <a-text value="The Earth"
+        position="0 5 -5"
+        color="#0ffa66"
+        width="10"
+        height="10">
+        </a-text>
+
+        <a-entity position="0 1.8 0">
+            <a-camera></a-camera>
+        </a-entity>
+
+    </a-scene>
+
+</body>
+</html>
+
+
+
+
